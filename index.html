@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width , initial-scale=1">
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <title>Document</title>
 
@@ -13,54 +15,56 @@
 <body>
     <header>
         <h1>Connect4</h1>
-        <p>discripe the game</p>
+        <p>Mathc al ine with the same color in any ways and you will win</p>
         <nav>
-            <ul><li>About the game</li></ul>
+            
         </nav>
     </header>
 
     <main>
+        <div id="Modifybourd"></div>
         
          
         <div class="content1">
-             <div id="firstRow">
-                <div class="box1"  ></div>
-                <div class="box1"  ></div>
-                <div class="box1"  ></div>
-                <div class="box1"  ></div>
+             <div id="firstColumn">
+                <div class="box1"  id="Frow1"></div>
+                <div class="box1"  id="Frow2"></div>
+                <div class="box1"  id="Frow3"></div>
+                <div class="box1"  id="Frow4"></div>
             </div>
 
-            <div id="secondRow">
+            <div id="secondColumn">
         
-                <div class="box1"  ></div>
-                <div class="box1"  ></div>
-                <div class="box1"  ></div>
-                <div class="box1"  ></div>
+                <div class="box1"  id="Srow1" ></div>
+                <div class="box1"  id="Srow2"></div>
+                <div class="box1"  id="Srow3"></div>
+                <div class="box1"  id="Srow4"></div>
             </div>
 
-            <div id="thirdRow">
-                <div class="box1"  ></div>
-                <div class="box1"  ></div>
-                <div class="box1"  ></div>
-                <div class="box1"  ></div>
+            <div id="thirdColumn">
+                <div class="box1"  id="Trow1" color=""></div>
+                <div class="box1"  id="Trow2" name="column3"></div>
+                <div class="box1"  id="Trow3" name="column3"></div>
+                <div class="box1"  id="Trow4" name="column3"></div>
             </div>
 
-                <div id="lastRow" >
-                <div class="box1"  ></div>
-                <div class="box1"  ></div>
-                <div class="box1"  ></div>
-                <div class="box1"  ></div>
+                <div id="lastColumn">
+                <div class="box1" id="Lrow1"   ></div>
+                <div class="box1" id="Lrow2" ></div>
+                <div class="box1" id="Lrow3" ></div>
+                <div class="box1" id="Lrow4"></div>
                 </div>
 
 
               </div>
-              <button id="buttonPlay">play</button>
+
+
 
 
     </main>
 
     <footer>
-        <p>safwan &copy;</p>
+        <p>Safwan &copy;</p>
     </footer>
     
     <script src="jQeury.js"></script>
