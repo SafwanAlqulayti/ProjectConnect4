@@ -5,118 +5,133 @@ window.onload = function() {
                              ["#Lrow3","#Trow3","#Srow3","#Frow3"],
                              ["#Lrow2","#Trow2","#Srow2" , "#Frow2"],
                             ["#Lrow1","#Trow1","#Srow1" , "#Frow1"] ]
+
+
+                         
               
+                               var   counter = 0
                                 var playerTurnCounter = 0
                                 var l= 0
                                 var t =0
                                 var s =0
                                 var f =0
-                                var className = " "
-                                // function pleyerTurn(){
+                                var redScore = 0
+                                var atStart =  $(".content1 >  #firstColumn > div , #secondColumn > div ,#thirdColumn > div ,#lastColumn > div").clone()
+                              
 
-                                //     if(playerTurnCounter ==  0){
-                                //         className = "Red"
-                                //         playerTurnCounter++
-                                //     }else {
+                                
+
+                                var className = " " 
+                                
+                                function pleyerTurn(){
+
+                                    if(playerTurnCounter ==  0){
+                                        className = "Red"
+                                        playerTurnCounter++
+                                    }else {
                                          
-                                //             className= "yeloow"
-                                //             playerTurnCounter--
-                                //         }
+                                            className= "yeloow"
+                                            playerTurnCounter--
+                                        }
             
-                                //     }
-                                //     pleyerTurn()
-                        
-                                //     if(this.id.includes("Lrow") ){
-        
-                                //                         $(AllColumn[l][0]).addClass(className)
-                                //                         $(this).off("click")
-                                //                         l++
-                                                          
-                                                        
-                                //                         }
-                                
-                                 
-                                $(".content1 >  #firstColumn > div , #secondColumn > div ,#thirdColumn > div ,#lastColumn > div").click ( function(){
+                                    }
+                
                                     
-                                    console.log(className)
+                                $(".content1 >  #firstColumn > div , #secondColumn > div ,#thirdColumn > div ,#lastColumn > div").click ( function(){
+
+                                     
+                                    pleyerTurn()
+                                     
+                                     
                          
-                                                if(playerTurnCounter == 0 &&  this.id.includes("Lrow") ){
+                                                if(this.id.includes("Lrow") ){
 
-                                                    $(AllColumn[l][0]).addClass("Red")
-                                                        $(this).off("click")
-                                                    l++
-                                                        playerTurnCounter++
+                                                    $(AllColumn[l][0]).addClass(className)
                                                         
-                                                    }
-                                                    
-                                                    else  if(playerTurnCounter == 1  &&  this.id.includes("Lrow"))  {  
-                                
-                                                        $(AllColumn[l][0]).addClass("yeloow")
-                        
-                                                        l++
-                                                        playerTurnCounter--
-                        
-                                
-                                                    }
-                                          
+                                                    l++
+                                                    //if < 4 in one state
+                                                }
 
+                                            if(this.id.includes("Trow") ){
 
-                                         
-                                           
-
-                                            if(playerTurnCounter == 0 &&  this.id.includes("Trow") ){
-
-                                                $(AllColumn[t][1]).addClass("Red")
-                                                    $(this).off("click")
+                                                $(AllColumn[t][1]).addClass(className)
+                                                  
                                                 t++
-                                                    playerTurnCounter++
-                                                    
-                                                }
-                                                
-                                                else  if(playerTurnCounter == 1  &&  this.id.includes("Trow"))  {  
-                            
-                                                    $(AllColumn[t][1]).addClass("yeloow")
-                    
-                                                    t++
-                                                    playerTurnCounter--
-                    
-                            
-                                                }
-                                                if(playerTurnCounter == 0 &&  this.id.includes("Srow") ){
+                     
+                                            }
+                   
+                                                if(this.id.includes("Srow") ){
 
-                                                $(AllColumn[s][2]).addClass("Red")
-                                                    $(this).off("click")
+                                                $(AllColumn[s][2]).addClass(className)
+                                                     
                                                 s++
-                                                    playerTurnCounter++
-                                                    
-                                                }
-                                                
-                                                else  if(playerTurnCounter == 1  &&  this.id.includes("Srow"))  {  
-                            
-                                                    $(AllColumn[s][2]).addClass("yeloow")
-                    
-                                                    s++
-                                                    playerTurnCounter--
-                    
-                                                }
-                                                if(playerTurnCounter == 0 &&  this.id.includes("Frow") ){
+               
+                                            }
+                                     
+                                                if(this.id.includes("Frow") ){
 
-                                                $(AllColumn[f][3]).addClass("Red")
-                                                    $(this).off("click")
-                                                f++
-                                                    playerTurnCounter++
+                                                $(AllColumn[f][3]).addClass(className)
                                                     
-                                                            }
-                                                                else  if(playerTurnCounter == 1  &&  this.id.includes("Frow"))  {  
-                            
-                                                    $(AllColumn[f][3]).addClass("yeloow")
-                    
-                                                    f++
-                                                    playerTurnCounter--
-                    
+                                                f++
                                                 }
+                                             
+                        if($(".c1").not(".Red").length == 0  ||$(".c2").not(".Red").length == 0 ||
+                        $(".c3").not(".Red").length == 0 || $(".c4").not(".Red").length == 0 ||
+                        $(".r2").not(".Red").length == 0 ||  $(".r1").not(".Red").length == 0 ||
+                        $(".r3").not(".Red").length == 0 ||  $(".r4").not(".Red").length == 0 ||
+                        $(".d1").not(".Red").length == 0 
+
+                        ){
+                            alert("Red wins")
+                            $("#H2id").append("<p>Red Now</p>" + (redScore+1) )
+                          }
+
+                          else if( $(".c2").not(".yeloow").length == 0 || $(".c1").not(".yeloow").length == 0 ||
+                          $(".c3").not(".yeloow").length == 0 || $(".c4").not(".yeloow").length == 0||
+                          $(".r2").not(".yeloow").length == 0 ||  $(".r1").not(".yeloow").length == 0 ||
+                          $(".r3").not(".yeloow").length == 0 ||  $(".r4").not(".yeloow").length == 0  ||
+                          $(".d1").not(".yeloow").length == 0 ){
+                              alert("Yeloow win")
+                          }
+                          else if (counter == 16){
+                              alert("it is a tie")
+                          }
+                          counter ++
+                                                // for(i=0 ; i<AllColumn.length ; i++){
+                                                //     for(j=0 ; j<AllColumn[i].length ; j ++){
+                               
+                                                //        if($(AllColumn[i][j]).hasClass("Red") == true && redCounter < 4){
+                                                //             redCounter++
+                                                //             alert("sss")
+                                                            
+                                                //        } 
+                                                      
+                                                //     }
+                                                // }
+                                           
+                                                
+
 
                     });
+
+                    // function check(){
+                    //     var arrCheck = [".c1",".c2",".c3"]
+                    //     for(i =0 ; i< arrCheck.length ; i ++){
+                    //         if($(i).not(".yeloow").length  == 0){
+                    //             alert("yeloow win")
+                    //         }
+                    //     }
+                    // }
+           
+                    
+                         
+                           
+                             
+                // $("#Restart").click(function(){
+
+                //     $( $(".content1 >  #firstColumn > div , #secondColumn > div ,#thirdColumn > div ,#lastColumn > div")).replaceWith() 
+                // })           
+                       
                  
                                          
     });//ready

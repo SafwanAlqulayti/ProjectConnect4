@@ -24,8 +24,34 @@ background-color: aqua;
      align-items: stretch;
 
   } */ 
+  .all{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+  }
+  #H2id{
+       
+     width: 30%;
+     text-align: center;
+     color: black;
+  }
+  #H2id>p:nth-child(2){
+      text-align: left;
+      display: inline;
+      padding: 15px;
+      color: red;
+
+  }
+  #H2id>p:nth-child(3){
+    text-align: right;
+    display: inline;
+    padding: 15px;
+    color:yellow;
+
+}
+
   .content1{
-    margin: auto;
+    margin: 10px; /*new was auto */
     width: 420px;
     height: 400px;    
     background-color: rgb(48, 121, 206);
@@ -33,6 +59,7 @@ background-color: aqua;
     border-radius: 10%;
     display: flex;
     flex-direction: row;
+    
   }
 
   /* control each cirqule in the */
@@ -74,15 +101,23 @@ background-color: aqua;
 
  }
  button{
-     background-color: black;
- }
+     background-color:  rgb(48, 121, 206);
+     height: 30px ;
+     width: 80px;
+     margin-left: 330px;
+     color: white;
+     font-size: 20px;
+     margin-top: 10px;
+  }
  body{
     background-color: rgb(218, 218, 218);
     margin: 0;
     width: 100%;
     min-width: 100%;
-    text-align: center;
+    
+    
     color:white;
+    
     
 
 }
@@ -91,6 +126,7 @@ background-color: aqua;
      background-color: rgb(33, 66, 66);
      margin: auto;
      padding-top: 1px;
+     padding-left: 20px;
      border-bottom: red solid 2px;
    }
  footer{
@@ -101,4 +137,5 @@ background-color: aqua;
     position: relative;
      height: 60px;
     margin-top: 70px;
+    text-align: center  ;
  }
