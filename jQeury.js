@@ -153,6 +153,7 @@ window.onload = function() {
                                                  stopClick()
 
                                                   }
+                                             
                                                 
                     });
                 //reset every thing
@@ -169,6 +170,7 @@ window.onload = function() {
                       $("#H2one").text(" ")
                   
                       stopClick()
+                     
 
                             
                 });
@@ -185,6 +187,7 @@ window.onload = function() {
                     q--
                   
                 }}
+               
                                      
     });//ready
 }
