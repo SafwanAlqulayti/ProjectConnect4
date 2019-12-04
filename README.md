@@ -22,7 +22,8 @@ I think filling the game column could be done using for to check every circle bu
  
 # Game wireframe   
   https://wireframe.cc/g608aG
-#Game url
+  
+  #Game url
 https://safwanalqulayti.github.io/ProjectConnect4/
  
  
