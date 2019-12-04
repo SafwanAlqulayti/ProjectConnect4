@@ -12,6 +12,7 @@ window.onload = function() {
                                 var t =0
                                 var s =0
                                 var f =0
+                                var q=0
                                 var redScore = 0
                                  var className = " " 
                                 //  var startGAmeState = $(".content1 > #firstColumn >*div , #secondColumn > *div ,#thirdColumn > *div ,#lastColumn > *div").clone()
@@ -28,7 +29,7 @@ window.onload = function() {
                                         }
             
                                     }
-                                $(".content1 >  #firstColumn > div , #secondColumn > div ,#thirdColumn > div ,#lastColumn > div").click ( function(){
+                                $(".content1 >  #firstColumn > div , #secondColumn > div ,#thirdColumn > div ,#lastColumn > div").click ( function (){
 
                                      
                                     
@@ -71,8 +72,10 @@ window.onload = function() {
                                                 
                                                 if(f<3) {  
 
+                                                   
                                                     f++
                                                 }
+                                               
                                                 }
                                                 if($(".c1 ").not(".Red").length == 0  ||$(".c2").not(".Red").length == 0 ||
                                                 $(".c3").not(".Red").length == 0 || $(".c4").not(".Red").length == 0 ||
@@ -82,8 +85,9 @@ window.onload = function() {
                         
                                                 ){
                                                     alert("Red wins")
-                                                    $("#H2id").append("<p>Red Now</p>" + (redScore+1) )
-                                                    $(".content1").hide()
+                                                     stopClick()
+                                                    
+                                                    
                                                   }
                                                   ///if all has class and they are even it is tie 
                         
@@ -93,11 +97,13 @@ window.onload = function() {
                                                   $(".r3").not(".yeloow").length == 0 ||  $(".r4").not(".yeloow").length == 0  ||
                                                   $(".d1").not(".yeloow").length == 0 ){
                                                       alert("yellow win")
-                                                      $(".content1").hide()
+                                                       stopClick()
+
                                                   }
                                                   else if ($(".box1").not(".yeloow").length==8 && $(".box1").not(".Red").length==8 ){
                                                       alert("it is a tie")
-                                                       $(".content1").hide()
+                                                        stopClick()
+
                                                   }
                      
                           
@@ -135,17 +141,37 @@ window.onload = function() {
                     
                          // remove and thean add class box 
                 //          var classes = ["content1" , "content1>firstColumn","content1>secondColumn","content1>thirdColumn","content1>lastColumn" ]
-                // $("#Restart").click(function(){
+                $("#Restart").click(function(){
 
 
                     
-                //     $(".content1 >  #firstColumn > div , #secondColumn > div ,#thirdColumn > div ,#lastColumn > div").classList.add("content1","content1:firstColumn")
-                    
+                    $(" #firstColumn > div , #secondColumn > div ,#thirdColumn > div ,#lastColumn > div").removeClass("Red yeloow")
+                   playerTurnCounter = 0
+                     l= 0
+                     t =0
+                     s =0
+                     f =0
+                     redScore = 0
+                      className = " " 
+                      stopClick()
 
-                     
-                // })           
-                       
+                            
+                });
+                function stopClick()
+                {
+                    if( q ==  0){
+                        $(" #firstColumn > div , #secondColumn > div ,#thirdColumn > div ,#lastColumn > div").css("pointer-events", "none");
+                        q++
+                   
+                    }else if (q ==1 ){
+
+                    $(" #firstColumn > div , #secondColumn > div ,#thirdColumn > div ,#lastColumn > div").css("pointer-events", "auto");
+                    q--
+                  
+
+                }}
                  
                                          
     });//ready
-}//windo
+}
+

@@ -34,21 +34,10 @@ background-color: aqua;
      width: 30%;
      text-align: center;
      color: black;
+     display: inline;
+     text-align: left;
   }
-  #H2id>p:nth-child(2){
-      text-align: left;
-      display: inline;
-      padding: 15px;
-      color: red;
-
-  }
-  #H2id>p:nth-child(3){
-    text-align: right;
-    display: inline;
-    padding: 15px;
-    color:yellow;
-
-}
+ 
 
   .content1{
     margin: 10px; /*new was auto */
