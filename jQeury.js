@@ -92,7 +92,7 @@ window.onload = function() {
                                                   $(".r2").not(".yeloow").length == 0 ||  $(".r1").not(".yeloow").length == 0 ||
                                                   $(".r3").not(".yeloow").length == 0 ||  $(".r4").not(".yeloow").length == 0  ||
                                                   $(".d1").not(".yeloow").length == 0 ){
-                                                      alert("Yeloow win")
+                                                      alert("yellow win")
                                                       $(".content1").hide()
                                                   }
                                                   else if ($(".box1").not(".yeloow").length==8 && $(".box1").not(".Red").length==8 ){
