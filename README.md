@@ -1,8 +1,3 @@
-# Project Connect4
- 
-
-It is a game where you have to match a line with the same color in any direction 
-
 # Connect4
 
 It is a game where you have to match a line with the same color in any direction .
@@ -20,13 +15,11 @@ when the row is filled the length will be zero and the player will win .
 
 #Favorite function 
 
-the player turn function it can count the turn and decide the class color to add .It saved me a lot of coding .
+the player turn function it can count the turn and decide the class color to add .It saved me a lot of coding .Also Stop clicking in game circle by disabling any css effect it will make the game run on the correct order by disabling other counters from keep counting .
 
 #Unsolved problems 
-I think filling the game column could off be done using for to check every circle but I could not do it .it will make the code shorter ,.
-# Stop clicking 
-in game circle by disabling any css effect it will make the game run on the correct order by disabling other counters from keep counting .
-
+I think filling the game column could be done using for to check every circle but I could not do it .it will make the code shorter .
+ 
 # Game wireframe   
   https://wireframe.cc/g608aG
 #Game url
