@@ -14,39 +14,50 @@ window.onload = function() {
                                 var f =0
                                 var q=0
                                 var redScore = 0
+                                var yelloScore = 0
                                  var className = " " 
-                                //  var startGAmeState = $(".content1 > #firstColumn >*div , #secondColumn > *div ,#thirdColumn > *div ,#lastColumn > *div").clone()
-                                //  alert($(".content1 > div").attr("class"))
+                               
+                       
                                  function pleyerTurn(){
 
-                                    if(playerTurnCounter ==  0){
+                                    if(playerTurnCounter ==  0  ){
                                         className = "Red"
+                                      
+ 
                                         playerTurnCounter++
                                     }else {
                                          
                                             className= "yeloow"
                                             playerTurnCounter--
+                                       
+                                            
                                         }
             
                                     }
+                                    //changing divs colors
                                 $(".content1 >  #firstColumn > div , #secondColumn > div ,#thirdColumn > div ,#lastColumn > div").click ( function (){
 
-                                     
-                                    
+
                                     pleyerTurn()
-                                          if(this.id.includes("Lrow") ){
+                                
+                                   //prevent over write
+                                          if(this.id.includes("Lrow" )&&  $(AllColumn[l][0]).hasClass("Red")==false &&  $(AllColumn[l][0]).hasClass("yeloow")==false ){
 
                                                     $(AllColumn[l][0]).addClass(className)
+                                 
+
                                                     if(l<3) {  
 
                                                     l++
                                                 }
-                                                    //if < 4 in one state
+                                                
+                                               
                                                 }
 
-                                            if(this.id.includes("Trow") ){
+                                            if(this.id.includes("Trow") &&  $(AllColumn[t][1]).hasClass("Red")==false &&  $(AllColumn[t][1]).hasClass("yeloow")==false ){
 
                                                 $(AllColumn[t][1]).addClass(className)
+                                          
                                                   
                                                 if(t<3) {  
 
@@ -55,9 +66,10 @@ window.onload = function() {
                      
                                             }
                    
-                                                if(this.id.includes("Srow") ){
+                                                if(this.id.includes("Srow" ) &&  $(AllColumn[s][2]).hasClass("Red")==false &&  $(AllColumn[s][2]).hasClass("yeloow")==false ){
 
                                                 $(AllColumn[s][2]).addClass(className)
+                                                
                                                      
                                                 if(s<3) {  
 
@@ -66,9 +78,10 @@ window.onload = function() {
                
                                             }
                                      
-                                                if(this.id.includes("Frow") ){
+                                                if(this.id.includes("Frow") &&  $(AllColumn[f][3]).hasClass("Red")==false &&  $(AllColumn[f][3]).hasClass("yeloow")==false ){
 
                                                 $(AllColumn[f][3]).addClass(className)
+                                               
                                                 
                                                 if(f<3) {  
 
@@ -77,86 +90,56 @@ window.onload = function() {
                                                 }
                                                
                                                 }
+                                                //check win
                                                 if($(".c1 ").not(".Red").length == 0  ||$(".c2").not(".Red").length == 0 ||
                                                 $(".c3").not(".Red").length == 0 || $(".c4").not(".Red").length == 0 ||
                                                 $(".r2").not(".Red").length == 0 ||  $(".r1").not(".Red").length == 0 ||
                                                 $(".r3").not(".Red").length == 0 ||  $(".r4").not(".Red").length == 0 ||
-                                                $(".d1").not(".Red").length == 0 
+                                                $(".d1").not(".Red").length == 0 || $(".d2").not(".Red").length == 0 
                         
                                                 ){
                                                     alert("Red wins")
+                                                    redScore ++
+                                                    $("#RedCounter").text(redScore)
                                                      stopClick()
                                                     
-                                                    
                                                   }
-                                                  ///if all has class and they are even it is tie 
-                        
+                           
                                                   else if( $(".c2").not(".yeloow").length == 0 || $(".c1").not(".yeloow").length == 0 ||
                                                   $(".c3").not(".yeloow").length == 0 || $(".c4").not(".yeloow").length == 0||
                                                   $(".r2").not(".yeloow").length == 0 ||  $(".r1").not(".yeloow").length == 0 ||
                                                   $(".r3").not(".yeloow").length == 0 ||  $(".r4").not(".yeloow").length == 0  ||
-                                                  $(".d1").not(".yeloow").length == 0 ){
+                                                  $(".d1").not(".yeloow").length == 0 || $(".d2").not(".yeloow").length == 0 ){
                                                       alert("yellow win")
+                                                      yelloScore ++
+                                                      $("#YelloCounter").text(yelloScore)
                                                        stopClick()
 
                                                   }
                                                   else if ($(".box1").not(".yeloow").length==8 && $(".box1").not(".Red").length==8 ){
                                                       alert("it is a tie")
-                                                        stopClick()
+                                                 stopClick()
 
                                                   }
-                     
-                          
-                                                // for(i=0 ; i<AllColumn.length ; i++){
-                                                //     for(j=0 ; j<AllColumn[i].length ; j ++){
-                               
-                                                //        if($(AllColumn[i][j]).hasClass("Red") == true && redCounter < 4){
-                                                //             redCounter++
-                                                //             alert("sss")
-                                                            
-                                                //        } 
-                                                      
-                                                //     }
-                                                // }
-                                           
                                                 
-
-                                                // sessionStorage.setItem('keyStorage', $(".content1 >  #firstColumn > div , #secondColumn > div ,#thirdColumn > div ,#lastColumn > div"));
-
                     });
-
-                    
-                                                
-                // check if any win in last turn stop entring after win move to new page 
-                     
-                    // function check(){
-                    //     var arrCheck = [".c1",".c2",".c3"]
-                    //     for(i =0 ; i< arrCheck.length ; i ++){
-                    //         if($(i).not(".yeloow").length  == 0){
-                    //             alert("yeloow win")
-                    //         }
-                    //     }
-                    // }
-           
-                    
-                         // remove and thean add class box 
-                //          var classes = ["content1" , "content1>firstColumn","content1>secondColumn","content1>thirdColumn","content1>lastColumn" ]
+ //reset every thing
                 $("#Restart").click(function(){
-
-
-                    
                     $(" #firstColumn > div , #secondColumn > div ,#thirdColumn > div ,#lastColumn > div").removeClass("Red yeloow")
                    playerTurnCounter = 0
                      l= 0
                      t =0
                      s =0
                      f =0
-                     redScore = 0
+            
+                  
                       className = " " 
+                  
                       stopClick()
 
                             
                 });
+                //stop the game after each round
                 function stopClick()
                 {
                     if( q ==  0){
@@ -168,10 +151,8 @@ window.onload = function() {
                     $(" #firstColumn > div , #secondColumn > div ,#thirdColumn > div ,#lastColumn > div").css("pointer-events", "auto");
                     q--
                   
-
                 }}
-                 
-                                         
+                                     
     });//ready
 }
 

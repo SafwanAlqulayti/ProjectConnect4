@@ -35,9 +35,31 @@ background-color: aqua;
      text-align: center;
      color: black;
      display: inline;
-     text-align: left;
   }
- 
+  #H2id>p:nth-child(2){
+      text-align: left;
+     
+      display: inline;
+      padding: 15px;
+      color: red;
+
+  }
+  #H2id>span{
+      color: black;
+      display: inline;
+
+      padding: 70px 45px 45px 45px;
+      
+      
+       
+  }
+  #H2id>p:nth-child(3){
+    text-align: right;
+    display: inline;
+    padding: 15px;
+    color:yellow;
+
+}
 
   .content1{
     margin: 10px; /*new was auto */
