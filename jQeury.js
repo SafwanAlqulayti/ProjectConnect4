@@ -15,6 +15,8 @@ window.onload = function() {
                                 var q=0
                                 var redScore = 0
                                 var yelloScore = 0
+                                var yellowTurn = "Yellow player Turn"
+                                var redTurn = "Red player Turn"
                                  var className = " " 
                                
                        
@@ -22,33 +24,46 @@ window.onload = function() {
 
                                     if(playerTurnCounter ==  0  ){
                                         className = "Red"
-                                      
- 
+                                    
                                         playerTurnCounter++
+                                        $("#H2one").text(yellowTurn)
                                     }else {
                                          
                                             className= "yeloow"
                                             playerTurnCounter--
+                                            $("#H2one").text(redTurn)
                                        
                                             
                                         }
             
                                     }
-                                    //changing divs colors
+                                    //changing divs colors select all divs
                                 $(".content1 >  #firstColumn > div , #secondColumn > div ,#thirdColumn > div ,#lastColumn > div").click ( function (){
 
 
                                     pleyerTurn()
                                 
-                                   //prevent over write
+                                   //The frist condition check the column using the id , the secend and third checkds the dive classes
+                                   //l represent the postion in the arrey to start coloring from the bottom
                                           if(this.id.includes("Lrow" )&&  $(AllColumn[l][0]).hasClass("Red")==false &&  $(AllColumn[l][0]).hasClass("yeloow")==false ){
 
+                                           
                                                     $(AllColumn[l][0]).addClass(className)
                                  
 
-                                                    if(l<3) {  
+                                                    //filling the column by adding the index
+                                                    if(l<=4) {  
 
                                                     l++
+                                                }
+                                                /*prevent the player counter from adding new number if the colomn filled
+                                                with out it the counter will keep adding and might make the player chose more than 
+                                                one div and fill it with the same color and corrapt the game order also it will not start until the column is
+                                                full
+                                                 */
+                                                if (l==4){
+                                                
+                                                    $(" #lastColumn > div").css("pointer-events", "none");
                                                 }
                                                 
                                                
@@ -59,10 +74,15 @@ window.onload = function() {
                                                 $(AllColumn[t][1]).addClass(className)
                                           
                                                   
-                                                if(t<3) {  
+                                                if(t<=4) {  
 
                                                     t++
                                                 }
+                                                if (t==4){
+                                                
+                                                    $(" #thirdColumn > div").css("pointer-events", "none");
+                                                }
+                                                
                      
                                             }
                    
@@ -71,10 +91,15 @@ window.onload = function() {
                                                 $(AllColumn[s][2]).addClass(className)
                                                 
                                                      
-                                                if(s<3) {  
+                                                if(s<=4) {  
 
                                                     s++
                                                 }
+                                                if (s==4){
+                                                
+                                                    $(" #secondColumn > div").css("pointer-events", "none");
+                                                }
+                                                
                
                                             }
                                      
@@ -83,14 +108,20 @@ window.onload = function() {
                                                 $(AllColumn[f][3]).addClass(className)
                                                
                                                 
-                                                if(f<3) {  
+                                                if(f<=4) {  
 
                                                    
                                                     f++
                                                 }
+                                                if (f==4){
+                                                
+                                                    $(" #firstColumn > div").css("pointer-events", "none");
+                                                }
+                                                
                                                
                                                 }
-                                                //check win
+                                                /*check win by counting each possiple win way by counting the length of the columns and rows 
+                                                when the game start each length will be 4 */ 
                                                 if($(".c1 ").not(".Red").length == 0  ||$(".c2").not(".Red").length == 0 ||
                                                 $(".c3").not(".Red").length == 0 || $(".c4").not(".Red").length == 0 ||
                                                 $(".r2").not(".Red").length == 0 ||  $(".r1").not(".Red").length == 0 ||
@@ -98,6 +129,7 @@ window.onload = function() {
                                                 $(".d1").not(".Red").length == 0 || $(".d2").not(".Red").length == 0 
                         
                                                 ){
+                                                    
                                                     alert("Red wins")
                                                     redScore ++
                                                     $("#RedCounter").text(redScore)
@@ -123,7 +155,7 @@ window.onload = function() {
                                                   }
                                                 
                     });
- //reset every thing
+                //reset every thing
                 $("#Restart").click(function(){
                     $(" #firstColumn > div , #secondColumn > div ,#thirdColumn > div ,#lastColumn > div").removeClass("Red yeloow")
                    playerTurnCounter = 0
@@ -134,12 +166,13 @@ window.onload = function() {
             
                   
                       className = " " 
+                      $("#H2one").text(" ")
                   
                       stopClick()
 
                             
                 });
-                //stop the game after each round
+                //stop the clicking  in the game after each round
                 function stopClick()
                 {
                     if( q ==  0){

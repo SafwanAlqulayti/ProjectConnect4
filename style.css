@@ -36,7 +36,7 @@ background-color: aqua;
      color: black;
      display: inline;
   }
-  #H2id>p:nth-child(2){
+  #H2id>p:nth-child(3){
       text-align: left;
      
       display: inline;
@@ -53,7 +53,7 @@ background-color: aqua;
       
        
   }
-  #H2id>p:nth-child(3){
+  #H2id>p:nth-child(4){
     text-align: right;
     display: inline;
     padding: 15px;

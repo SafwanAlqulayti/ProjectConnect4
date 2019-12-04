@@ -22,10 +22,10 @@ when the row is filled the length will be zero and the color will win .
 
 the player turn function it can count the turn and decide  the class color to add it saved me a lot of coding .
 
-# Game picture 
+# Game wireframe   
   https://wireframe.cc/g608aG
 #Game url
-
+https://safwanalqulayti.github.io/ProjectConnect4/
  
  
  
